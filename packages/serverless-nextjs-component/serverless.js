@@ -398,6 +398,7 @@ class NextjsComponent extends Component {
     const defaultEdgeLambdaOutputs = await defaultEdgeLambda({
       description: "Default Lambda@Edge for Next CloudFront distribution",
       handler: "index.handler",
+      region: inputs.edgeLambdaRegion,
       code: join(nextConfigPath, DEFAULT_LAMBDA_CODE_DIR),
       role: {
         service: ["lambda.amazonaws.com", "edgelambda.amazonaws.com"],
